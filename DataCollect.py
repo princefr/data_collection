@@ -9,6 +9,7 @@ from Utils import PoseUtils
 import numpy as np
 import csv
 from collections import deque
+from sort import Sort
 import pandas as pd
 
 # Import Openpose (Windows/Ubuntu/OSX)
@@ -64,6 +65,7 @@ class  MainWIndow(QtWidgets.QWidget):
         self.saved_count = 0
         self.backgorund_image = {}
         self.users_complete = {}
+        self.tracker = Sort(20, 3)
         self.currentExamination = 0
 
         # initiate the video
